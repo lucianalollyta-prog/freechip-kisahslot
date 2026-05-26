@@ -1,47 +1,11 @@
-<!--
-$$$\   $$\        $$$$$$\        $$$$$$$$\        $$$$$$\   
-$$$$\  $$ |      $$  __$$\       \____$$  |      $$  __$$\  
-$$ $$\ $$ |      $$ /  $$ |          $$  /       $$ /  $$ | 
-$$ \$$\$$ |      $$$$$$$$ |         $$  /        $$ |  $$ | 
-$$ |\$$$$ |      $$  __$$ |        $$  /         $$ |  $$ | 
-$$ | \$$$ |      $$ |  $$ |       $$  /          $$ |  $$ | 
-$$ |  \$$ |      $$ |  $$ |      $$  /            $$$$$$  | 
-\__|   \__|      \__|  \__|      \__/             \______/ 
-// Terus Belajar Agar Bisa Naik Kelas
-// Versi: 4.3
-// Powered by NA70
-// Welcome to Kisahslot
--->
-
 <!doctype html>
-<html ⚡ lang="id">
+<html amp lang="id">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-
-<title>Landing Page AMP</title>
-
-<link rel="canonical" href="https://domainanda.com/">
-
 <script async src="https://cdn.ampproject.org/v0.js"></script>
 
-<style amp-boilerplate>
-body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;
--moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;
--ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;
-animation:-amp-start 8s steps(1,end) 0s 1 normal both}
-@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}
-@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}
-@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}
-@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}
-@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}
-</style>
-
-<noscript>
-<style amp-boilerplate>
-body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}
-</style>
-</noscript>
+<title>Landing Page AMP</title>
 
 <style amp-custom>
 
@@ -49,66 +13,142 @@ body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:non
 margin:0;
 padding:0;
 box-sizing:border-box;
+font-family:Arial,sans-serif;
 }
 
 body{
 background:#000;
-font-family:Arial,sans-serif;
 color:#fff;
+overflow-x:hidden;
 }
 
 .wrapper{
 max-width:420px;
 margin:auto;
-padding:10px;
-border-left:2px solid #ffd700;
-border-right:2px solid #ffd700;
-min-height:100vh;
+padding:8px;
+border-left:2px solid gold;
+border-right:2px solid gold;
 }
 
+/* BANNER */
+
 .banner{
-border:2px solid #ffd700;
+border:2px solid gold;
 border-radius:20px;
 overflow:hidden;
 margin-bottom:15px;
-box-shadow:0 0 15px rgba(255,215,0,.5);
+animation:glow 1.5s infinite alternate;
 }
 
-.btn{
+.banner img{
+width:100%;
 display:block;
-text-align:center;
-padding:18px;
-margin:12px 0;
-text-decoration:none;
-font-size:22px;
-font-weight:bold;
-color:#fff;
-border-radius:35px;
-background:linear-gradient(180deg,#241700,#000);
-border:2px solid #6b5500;
-box-shadow:0 0 15px rgba(255,215,0,.4);
-transition:.3s;
+animation:zoom 4s infinite alternate;
 }
 
-.btn:hover{
-transform:scale(1.02);
+@keyframes zoom{
+from{
+transform:scale(1);
+}
+to{
+transform:scale(1.05);
+}
 }
 
-.footer{
-text-align:center;
-padding:20px 0;
-font-size:13px;
-color:#ffd700;
+@keyframes glow{
+from{
+box-shadow:0 0 10px gold;
 }
+to{
+box-shadow:0 0 25px gold;
+}
+}
+
+/* RUNNING TEXT */
 
 .marquee{
+overflow:hidden;
+white-space:nowrap;
 background:#111;
 padding:10px;
 border-radius:10px;
 margin-bottom:15px;
-color:#ffd700;
+}
+
+.marquee span{
+display:inline-block;
+animation:jalan 12s linear infinite;
+color:gold;
 font-weight:bold;
+}
+
+@keyframes jalan{
+from{
+transform:translateX(100%);
+}
+to{
+transform:translateX(-100%);
+}
+}
+
+/* BUTTON */
+
+.btn{
+display:block;
+text-decoration:none;
 text-align:center;
+padding:18px;
+margin:12px 0;
+font-size:22px;
+font-weight:bold;
+color:white;
+border-radius:30px;
+border:2px solid #6d5600;
+background:linear-gradient(#2e2200,#000);
+box-shadow:0 0 15px rgba(255,215,0,.4);
+animation:pulse 1s infinite;
+}
+
+@keyframes pulse{
+0%{
+transform:scale(1);
+}
+50%{
+transform:scale(1.03);
+}
+100%{
+transform:scale(1);
+}
+}
+
+/* PARTIKEL EMAS */
+
+body::before{
+content:"";
+position:fixed;
+inset:0;
+pointer-events:none;
+background-image:
+radial-gradient(circle,gold 1px,transparent 1px);
+background-size:50px 50px;
+opacity:.2;
+animation:particle 10s linear infinite;
+}
+
+@keyframes particle{
+from{
+transform:translateY(0);
+}
+to{
+transform:translateY(50px);
+}
+}
+
+.footer{
+text-align:center;
+padding:20px;
+font-size:13px;
+color:gold;
 }
 
 </style>
@@ -119,36 +159,29 @@ text-align:center;
 <div class="wrapper">
 
 <div class="banner">
-<amp-img
-src="https://i.postimg.cc/VksqjcP4/5a911021-55b9-4dc8-9560-6dcfc1b5a24b.png"
-width="800"
-height="800"
-layout="responsive"
-alt="Banner">
-</amp-img>
+<img src="https://i.postimg.cc/VksqjcP4/5a911021-55b9-4dc8-9560-6dcfc1b5a24b.png" alt="Banner">
 </div>
 
 <div class="marquee">
-SELAMAT DATANG DI KISAHSLOT
+<span>
+🎁SELAMAT DATANG DI KISAHSLOT🎁
+</span>
 </div>
 
-
 <a href="https://newkisah.com/?Ref=puEx5D00"
-   target="_blank"
-   rel="noopener noreferrer"
-   class="btn">
+target="_blank"
+class="btn">
 KLAIM BONUS NEW MEMBER
 </a>
 
 <a href="https://kisahslot.vercel.app/"
-   target="_blank"
-   rel="noopener noreferrer"
-   class="btn">
+target="_blank"
+class="btn">
 AKSES VIP MEMBER
 </a>
 
 <div class="footer">
-© 2026PromoKisahslot
+© 2026 KISAHSLOT GACOR
 </div>
 
 </div>
